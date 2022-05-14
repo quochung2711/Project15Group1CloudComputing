@@ -1,9 +1,6 @@
 package com.tntb.AdminController.Product;
 
 import java.io.IOException;
-import java.util.List;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,11 +36,20 @@ public class AddProductController extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
+		String cateid = req.getParameter("cateid");
+		String supid = req.getParameter("spid");
+		String name = req.getParameter("name");
+		String price = req.getParameter("price");
+		String content = req.getParameter("content");
+		String discount = req.getParameter("discount");
+		String image = req.getParameter("image");
+		String amount = req.getParameter("amount");
+		String sl = req.getParameter("sl");
+
 		prd = new ProductDAO();
-		List<ProductModel> listallpro = prd.getAllProduct();
-		req.setAttribute("listallproduct", listallpro);
-		RequestDispatcher rq = req.getRequestDispatcher("/view/admin/view-product.jsp");
-		rq.forward(req, response);
+		ProductModel product = new ProductModel(Integer.parseInt(cateid), Integer.parseInt(supid), name, Integer.parseInt(price), content, Integer.parseInt(discount), image, Integer.parseInt(amount), Integer.parseInt(sl));
+		prd.insert(product);
+		response.sendRedirect("admin-home-product");
 
 	}
 
