@@ -1,4 +1,7 @@
 # Project15Group1CloudComputing
+## Thành viên
+### Đinh Quốc Hùng        19133025
+### Trần Nguyên Thái Bảo  19133010
 Trang web Ecommerence bán hàng kết nối với Amazon Aurora.
 1. Tạo Amazon Aurora tạo database 
 link nhóm tham khảo:https://www.youtube.com/watch?v=n_QplvENyLY&feature=youtu.be
